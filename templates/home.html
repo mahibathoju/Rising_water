@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="ministyle.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/css.gg@2.0.0/icons/css/user-list.css' rel='stylesheet'>
+<style>
+    *{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+        background: url("{{url_for('static',filename='web6.jpeg')}}");
+        border-image-width: auto;
+        background-size:cover;
+        background-repeat: no-repeat;
+} 
+header{
+    border: solid 2px #e84a5f5b;
+    border-radius: 3px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    padding: 30px  5% 20px;
+    justify-content:space-between;
+    align-items: center;
+    z-index :100px;
+    background-color: #aaa2a265;
+    backdrop-filter:blur(6px); 
+}
+.flood{
+    font-family: "Libre Baskerville";
+    font-size: 35px;
+    color: #cf7d7d00;
+    font-weight: bold;
+    text-shadow: 2px 3px 2px rgb(96, 69, 69);
+}
+.logo{
+        display:inline-block;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight : 600;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        border-color: #e84a5f;
+        background-color: rgb(213, 176, 192);
+        margin :0 7px; 
+        font-family: Arsenal SC;
+        border-style: solid;
+        cursor: pointer;
+        /* color:rgb(197, 32, 104); */
+        color: #e84a5f;
+        transition: box-shadow 0.2s;
+        transition: transform 0.3s ease,background-color 0.3s, color 0.3s;;
+}  
+.navbar a:hover{
+    box-shadow: 4px 2px 4px rgba(60, 52, 52, 0.775);
+    transform: translateY(-10px);
+    color: white;
+    background-color: #e84a5f;
+}
+.navbar a:active{
+    box-shadow: 3px 3px 4px #000000;
+}
+.home{
+    display:flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20%;
+    color: rgb(87, 125, 157);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 10px;
+}
+.content h1{
+    font-size: 130px;
+    font-family: "Libre Baskerville";
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+}
+.sec2{
+    width:100vw;
+    height:84vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    gap:30px;
+    padding:20px;
+    font-weight:bold;
+    color:rgb(0, 0, 0);
+    text-align:justify;
+    background-color: aliceblue;
+}
+.active{
+  box-shadow: 4px 2px 4px rgba(60, 52, 52, 0.775);
+  transform: translateY(-10px);
+  color: white;
+  background-color: #e84a5f;
+  }
+  .img{
+    width:100vw;
+    height:100vh;
+}
+.content1{
+    font-family: Josefin Sans;
+    padding: 10px 30px;
+}
+</style>
+</head>
+<body>
+<div style="position : absolute; z-index : -1 ">
+    <img src="./web6.jpeg" class="img">
+</div>
+    <header >
+        <div><h1 class="flood">FLOODS PREDICTION</h1></div>
+        <nav class="navbar">
+        <a href="{{url_for('home')}}" class="logo active"><i class="fa fa-home"></i> HOME</a>
+        <a href="{{url_for('predict')}}" class="logo">Predict Floods</a>
+       
+    </nav>
+    </header>
+    <section class="home">
+        <div class="content">
+        <div><h1>R&ensp;I&ensp;S&ensp;I&ensp;N&ensp;G</h1></div><div><h1>W&ensp;A&ensp;T&ensp;E&ensp;R</h1></div>
+        </div>        
+    </section>
+     <section class="sec2">
+        <div>
+            <img src="../static/floods5.jpg" width="800px">
+        </div>
+        <div class="content1">
+          This project explores the application of machine learning techniques for flood 
+prediction, offering an innovative approach to address the growing challenges of flood 
+management and disaster mitigation. By collecting and analyzing historical weather data, 
+river levels, and other relevant information, we create a predictive model capable of assessing 
+flood risk. The methodology involves data collection, feature engineering, model selection, 
+training, and testing. We leverage machine learning algorithms, including decision trees, 
+random forests, support vector machines, or neural networks, to develop accurate flood 
+prediction models. Real-time data integration from weather forecasts and river sensors 
+ensures the model's continuous adaptability to changing conditions. This study demonstrates 
+the potential of machine learning as a valuable tool in mitigating the impacts of floods, 
+helping to save lives and minimize property damage.       
+        </div>
+    </section>
+</body>
+</html>
